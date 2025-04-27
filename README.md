@@ -27,11 +27,47 @@ Image Size: 28×28 pixels with 3 color channels (RGB)
 
 Purpose: Benchmark for low-resolution biomedical image generation
 
+Setup
+Framework:
 
-Models Overview
+PyTorch (Deep Learning Framework)
 
-Model | Discriminator  | Generator | Key Difference
-LSGAN | MSE Loss-based | MLP | Least Squares loss instead of BCE
-WGAN | Critic (No Sigmoid) | MLP | Wasserstein loss with weight clipping
-WGAN-GP | Critic | MLP | Wasserstein loss with Gradient Penalty
+Environment:
+
+Python 3.8+
+
+TorchMetrics (for IS and FID evaluation)
+
+TensorBoard (for visualization)Training Details
+Epochs: 50 per model
+
+Batch Size: 64
+
+Optimizers: Adam for both Generator and Discriminator
+
+Loss Functions:
+
+LS-GAN: Least Squares Loss
+
+WGAN: Wasserstein Loss with Weight Clipping
+
+WGAN-GP: Wasserstein Loss with Gradient Penalty
+
+Evaluation Metrics
+Inception Score (IS): Higher is better, measures image quality and diversity.
+
+Fréchet Inception Distance (FID): Lower is better, measures similarity to real images.
+
+ Visual Insights
+Training curves (Generator and Discriminator losses) and sample generations were logged using TensorBoard for better monitoring and analysis.
+
+Observations:
+
+LS-GAN: Showed fluctuating loss patterns over epochs.
+
+WGAN: Displayed steady convergence but some variance in generator loss.
+
+WGAN-GP: Achieved smooth, stable convergence throughout training.
+
+
 
